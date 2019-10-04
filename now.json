@@ -1,0 +1,30 @@
+{
+    "name": "Redux's combineRedcuers with TypeScript",
+    "alias": "redux-combine-reducers-with-typescript.now.sh",
+    "version": 2,
+    "builds": [
+        { 
+            "src": "next.config.js", 
+            "use": "@now/next" 
+        },
+        {
+            "src": "static/**/*", 
+            "use": "@now/static" 
+        }
+    ],
+    "routes": [
+        {
+            "src":"/.*",
+            "headers": { 
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Methods": "GET",
+                "Access-Control-Allow-Headers": "X-Requested-With, Content-Type, Accept",
+                "x-now-cache": "HIT",
+                "cache-control": "immutable,max-age=1800",
+                "Accept-Encoding": "br",
+                "Service-Worker-Allowed": "/"
+            } 
+        }
+    ],
+    "regions": ["all"]
+}
